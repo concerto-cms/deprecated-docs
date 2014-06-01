@@ -1,0 +1,15 @@
+{
+    "name": "concerto-cms/docs",
+    "description": "Documentation for the Concerto CMS software",
+    "authors": [
+        {
+            "name": "Mathieu Maes",
+            "email": "mathieu@webberig.be"
+        }
+    ],
+    "autoload": {
+    },
+    "target-dir": "",
+    "require": {
+    }
+}
