@@ -44,7 +44,18 @@ Add some demo data:
 <small>* [How to use the Symfony console](http://symfony.com/doc/current/cookbook/console/usage.html)
 </small>
 
-### step 4: run it!
+### step 4: Build the frontend
+The frontend stuff (js, css) needs to be compiled using a tool called grunt. Third-party javascript libraries are managed using the frontend package manager Bower. Both tools require node.js to be installed. If you haven't used node.js before, head over to the [Node.js website](http://nodejs.org) and install it.
+
+Install bower and grunt by running the following commands:
+> npm install -g grunt-cli bower             
+
+Run following commands to build the frontend files:
+> npm install
+> bower install
+> grunt
+
+### step 5: run it!
 
 Everything should be ready to work. All you need now is a php webserver. If you're using a webserver like Apache or Nginx, you need to make sure the `/web` folder is used as document root.
 
