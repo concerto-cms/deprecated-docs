@@ -5,11 +5,12 @@ There are 3 ways for downloading the code:
 
 **Option 1: using git**
 
-> git clone git@github.com:concerto-cms/ConcertoCmsStandardEdition.git
+    git clone git@github.com:concerto-cms/ConcertoCmsStandardEdition.git
 
 **Option 2: using composer**
 
-*(not yet possible)*
+    composer create-project concerto-cms/standard-edition -s dev
+<small>The -s argument is needed because Concerto is not yet in a stable state.</small>
 
 **Option 3: Download zip**
 
@@ -28,23 +29,7 @@ During the installation, composer will request some information about the databa
 * If you need more help on using composer, take a look at the [getcomposer.org](https://getcomposer.org/) website.
 </small>
 
-### step 3: setup a database
-
-Next, you need to run a few Symfony console commands to setup the database.
-
-The first command generates the tables:
-> php app/console doctrine:phpcr:init:dbal           
-
-Adds some initial data related to PHPCR:
-> php app/console doctrine:phpcr:repository:init  
-
-Add some demo data:
-> php app/console concerto:fixtures:load             
-
-<small>* [How to use the Symfony console](http://symfony.com/doc/current/cookbook/console/usage.html)
-</small>
-
-### step 4: Build the frontend
+### step 3: Build the frontend
 The frontend stuff (js, css) needs to be compiled using a tool called grunt. Third-party javascript libraries are managed using the frontend package manager Bower. Both tools require node.js to be installed. If you haven't used node.js before, head over to the [Node.js website](http://nodejs.org) and install it.
 
 Install bower and grunt by running the following commands:
@@ -55,11 +40,30 @@ Run following commands to build the frontend files:
 > bower install
 > grunt
 
+### step 4: Setup a database
+
+Next, you need to run a few Symfony console commands to setup the database.
+
+The first command generates the tables:
+
+    php app/console doctrine:phpcr:init:dbal           
+
+Adds some initial data related to PHPCR:
+
+    php app/console doctrine:phpcr:repository:init  
+
+Add some demo data:
+
+    php app/console concerto:fixtures:load             
+
+<small>* [How to use the Symfony console](http://symfony.com/doc/current/cookbook/console/usage.html)</small>
+
+
 ### step 5: run it!
 
 Everything should be ready to work. All you need now is a php webserver. If you're using a webserver like Apache or Nginx, you need to make sure the `/web` folder is used as document root.
 
-The easiest alternative is to use the php built-in server:
+The easiest option is to use the php built-in server:
 > cd web
 > php -S localhost:80
 
